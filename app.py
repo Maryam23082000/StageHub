@@ -21,6 +21,10 @@ def get_news():
             return jsonify({"error": "Failed to fetch news", "status_code": response.status_code}), 500
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/')
+def hello_world():
+    return "Hello, World!"
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
